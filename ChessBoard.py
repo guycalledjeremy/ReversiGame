@@ -170,6 +170,22 @@ class ChessBoard(object):
                         count += 1
         return count
 
+    def ActualCount(self, player):
+        """ Return the count of the pieces for the player.
+
+        @param ChessBoard self: this ChessBoard
+        @param int player: the player we want to count pieces for
+        @rtype: the number of pieces there is for the player
+        """
+        count = 0
+        for i in range(len(self.board)):
+            for j in range(len(self.board[i])):
+                if player == 1 and self.board[i][j].value == "X":
+                    count += 1
+                if player == -1 and self.board[i][j].value == "O":
+                    count += 1
+        return count
+
 
 if __name__ == "__main__":
     chessboard = ChessBoard()
